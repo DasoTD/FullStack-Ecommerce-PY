@@ -8,7 +8,7 @@ class Coupon(models.Model):
     discount = models.IntegerField(
     validators=[MinValueValidator(0),MaxValueValidator(100)],
     help_text='Percentage value (0 to 100)')
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.code
